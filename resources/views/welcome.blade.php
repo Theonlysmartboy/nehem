@@ -24,13 +24,25 @@
     <a href="../../index2.html"><b>NEHEM</b>APP</a>
   </div>
   <!-- /.login-logo -->
+  @if(Session::has('flash_message_error'))
+    <div class="alert alert-danger alert-block" id="autoClose" >
+      <button type="button" class="close" data-dismiss="alert">×</button>
+       <em class="text-warning">{!!session('flash_message_error')!!}</em>
+      </div>
+      @endif
+      @if(Session::has('flash_message_success'))
+      <div class="alert alert-success alert-block" id="autoClose" >
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <em class="text-primary">{!!session('flash_message_success')!!}</em>
+      </div>
+      @endif
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
       <form action="{{ route('admin.login.submit') }}" method="post">@csrf
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" placeholder="Email" name="email" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -38,7 +50,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password">
+          <input type="password" class="form-control" placeholder="Password" name="password" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -76,9 +88,6 @@
       <p class="mb-1">
         <a href="{{ route('password.request') }}">I forgot my password</a>
       </p>
-      <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
-      </p>
     </div>
     <!-- /.login-card-body -->
   </div>
@@ -91,6 +100,8 @@
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
+<!-- Form Validation -->
+<script src="{{asset('dist/js/form_validation.js')}}"></script>
 
 </body>
 </html>

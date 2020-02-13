@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('admin.login');
+Route::get('/', 'AdminController@showLoginForm')->name('admin.login');
 
 Auth::routes();
 

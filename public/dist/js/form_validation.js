@@ -34,61 +34,6 @@ $(document).ready(function () {
             }
         });
     });
-    //Function to delete Vendor
-    $(".deleteVendor").click(function () {
-        var id = $(this).attr('rel');
-        var deleteFunction = $(this).attr('rel1');
-        Swal.fire({
-            title: 'Are you sure you want to delete this vendor?',
-            text: "You won't be able to revert this!",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#28a745',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.value) {
-                window.location.href = "/admin/vendor/" + deleteFunction + "/" + id;
-            }
-        });
-    });
-    //Function to delete Zones
-    $(".deleteZone").click(function () {
-        var id = $(this).attr('rel');
-        var deleteFunction = $(this).attr('rel1');
-        Swal.fire({
-            title: 'Are you sure you want to delete this zone?',
-            text: "You won't be able to revert this!",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#28a745',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.value) {
-                window.location.href = "/admin/zone/" + deleteFunction + "/" + id;
-            }
-        });
-    });
-    //Function to delete products
-    $(".deleteProduct").click(function () {
-        var id = $(this).attr('rel');
-        var deleteFunction = $(this).attr('rel1');
-        Swal.fire({
-            title: 'Are you sure you want to delete this product?',
-            text: "You won't be able to revert this!",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#28a745',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.value) {
-                window.location.href = "/vendor/product/" + deleteFunction + "/" + id;
-            }
-        });
-    });
-    
     //Automatically close alerts
     window.setTimeout(function () {
         $(".alert").fadeTo(500, 0).slideUp(500, function () {

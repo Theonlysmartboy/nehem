@@ -10,12 +10,13 @@ use App\User;
 class AdminController extends Controller
 {
   public function showLoginForm(){
+    $title = "NEHEM | Login";
     if (Session::has('adminSession')) {
        return redirect('/admin')->with('flash_message_success', 'Welcome Back');
    } else if (Session::has('userSession')) {
        return redirect('/user')->with('flash_message_success', 'Welcome Back');
    }else{
-       return view('welcome');
+       return view('welcome')->with(compact('title'));
    }
   }
     public function login(Request $request){

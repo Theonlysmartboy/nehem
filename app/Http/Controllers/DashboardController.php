@@ -9,9 +9,11 @@ class DashboardController extends Controller
 {
     public function index(){
       if (Session::has('adminSession')) {
-         return view('admin.dashboard');
+        $title = "NEHEM | ADMIN DASHBOARD";
+         return view('admin.dashboard')->with(compact('title'));
      } else if (Session::has('userSession')) {
-         return view('user.dashboard');
+         $title = "NEHEM | ADMIN DASHBOARD";
+         return view('user.dashboard')->with(compact('title'));
      }else{
          return redirect('/')->with('flash_message_error', 'Access Denied');
     }

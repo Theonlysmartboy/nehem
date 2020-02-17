@@ -16,6 +16,18 @@
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
+        @if(Session::has('flash_message_error'))
+          <div class="alert alert-danger alert-block" id="autoClose" >
+            <button type="button" class="close" data-dismiss="alert">×</button>
+             <em class="text-warning">{!!session('flash_message_error')!!}</em>
+            </div>
+            @endif
+            @if(Session::has('flash_message_success'))
+            <div class="alert alert-success alert-block" id="autoClose" >
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <em class="text-primary">{!!session('flash_message_success')!!}</em>
+            </div>
+            @endif
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->

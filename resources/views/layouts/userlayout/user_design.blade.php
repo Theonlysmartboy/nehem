@@ -80,5 +80,7 @@
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
+<!-- Form Validation -->
+<script src="{{asset('dist/js/form_validation.js')}}"></script>
 </body>
 </html>

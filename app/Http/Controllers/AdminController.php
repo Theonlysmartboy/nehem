@@ -26,14 +26,14 @@ class AdminController extends Controller
         'password'=>'required|min:8'
       ]);
        //Attempt to login admin
-          if (Auth::attempt(['email'=>$request->email,'password'=>$request->password],$request->remember, 'role' => '0'])) {
+          if (Auth::attempt(['email'=>$request->email,'password'=>$request->password, 'role' => '0'],$request->remember)) {
               //start admin session
                 Session::put('adminSession', $request->email);
                 //if successfull, redirect to intended location
-                return redirect()->intended(route('admin.dashboard')->with('flash_message_success', 'Login Successfull'));
-            } else if (Auth::attempt(['email'=>$request->email,'password'=>$request->password],$request->remember, 'role' => '1'])) {
+                return redirect()->intended(route('admin.dashboard'))->with('flash_message_success', 'Welcome Back');
+            } else if (Auth::attempt(['email'=>$request->email,'password'=>$request->password, 'role' => '1'],$request->remember)) {
                 Session::put('userSession', $request->email);
-                return redirect()->intended(route('user.dashboard')->with('flash_message_success', 'Login Successfull'));
+                return redirect()->intended(route('user.dashboard'))->with('flash_message_success', 'Welcome Back');
             } else {
                 return redirect('/')->with('flash_message_error', 'Invalid Email Or password');
             }

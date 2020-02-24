@@ -4,11 +4,6 @@
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
 Route::get('/', 'AdminController@showLoginForm')->name('admin.login');
@@ -25,6 +20,7 @@ Route::prefix('admin')->group(function(){
   Route::get('/edit/user', 'UsersController@showEditUserForm')->name('admin.edit.user');
   Route::post('/edit/user', 'UsersController@update')->name('admin.edit.user.post');
 });
+
 Route::prefix('user')->group(function(){
   Route::post('/login', 'AdminController@login')->name('user.login.submit');
   Route::get('/', 'DashboardController@index')->name('user.dashboard');
@@ -34,3 +30,5 @@ Route::prefix('user')->group(function(){
   Route::get('/edit/member', 'MembersController@showEditMemberForm')->name('user.edit.member');
   Route::post('/edit/member', 'MembersController@update')->name('user.edit.member.post');
 });
+
+Route::get('/logout','AdminController@logout')->name('logout');

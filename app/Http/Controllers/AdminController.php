@@ -37,8 +37,9 @@ class AdminController extends Controller
             } else {
                 return redirect('/')->with('flash_message_error', 'Invalid Email Or password');
             }
+          }
 
-            public function settings() {
+    public function settings() {
         if (Session::has('adminSession')) {
             return view('admin.settings');
         } else {

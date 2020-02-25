@@ -71,9 +71,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3><?php echo $total_ministries ?></h3>
 
-                <p>User Registrations</p>
+                <p>Ministries</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -86,9 +86,9 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3><?php echo $total_departments ?></h3>
 
-                <p>Unique Visitors</p>
+                <p>Departments</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>

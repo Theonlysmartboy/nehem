@@ -24,7 +24,6 @@
             </div>
             @endif
             @if(Session::has('flash_message_success'))
-
             <script>
             $(window).load(function(){
             Swal.fire('Good job!',

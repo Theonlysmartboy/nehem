@@ -42,7 +42,7 @@ Route::prefix('ministry')->group(function(){
   Route::get('/view', 'MinistryController@index')->name('view.ministry');
   Route::get('/add', 'MinistryController@showAddMemberForm')->name('add.ministry');
   Route::post('/add', 'MinistryController@create')->name('add.ministry.submit');
-  Route::get('/edit/{id}', 'MinistryController@showEditMemberForm')->name('edit.ministry');
+  Route::get('/edit/{id}', 'MinistryController@showEditMinistryForm')->name('edit.ministry');
   Route::post('/edit/{id}', 'MinistryController@update')->name('edit.ministry.submit');
   Route::get('/delete/{id}', 'MinistryController@delete')->name('delete.ministry');
   Route::post('/delete/{id}', 'MinistryController@delete')->name('delete.ministry.submit');

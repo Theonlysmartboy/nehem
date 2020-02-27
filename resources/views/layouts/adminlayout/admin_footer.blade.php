@@ -1,4 +1,3 @@
-<!-- /.content-wrapper -->
  <footer class="main-footer">
    <strong>Copyright &copy; 2019 Designed By <a href="http://otemainc.com">Otema Technologies</a>.</strong>
    All rights reserved.

@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- DataTables -->
+ <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="{{asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
   <!-- Tempusdominus Bbootstrap 4 -->
@@ -54,6 +56,9 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- DataTables -->
+<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 <!-- SweetAlert2 -->
 <script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 <!-- ChartJS -->

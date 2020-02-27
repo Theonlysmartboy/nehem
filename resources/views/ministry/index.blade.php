@@ -24,13 +24,10 @@
             </div>
             @endif
             @if(Session::has('flash_message_success'))
-            <script>
-            $(window).load(function(){
-            Swal.fire('Good job!',
-  {!!session('flash_message_success')!!},
-  'success')
-   });
-</script>
+            <div class="alert alert-success alert-block" id="autoClose" >
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <em class="text-primary">{!!session('flash_message_success')!!}</em>
+            </div>
             @endif
       </div><!-- /.container-fluid -->
     </section>

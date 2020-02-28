@@ -6,11 +6,12 @@
   <title><?php echo $title?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="{{asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="{{asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- Theme style -->
@@ -25,15 +26,15 @@
   </div>
   <!-- /.login-logo -->
   @if(Session::has('flash_message_error'))
-    <div class="alert alert-danger alert-block" id="autoClose" >
+    <div class="alert alert-danger alert-block errorAlert" id="autoClose" >
       <button type="button" class="close" data-dismiss="alert">×</button>
-       <em class="text-warning">{!!session('flash_message_error')!!}</em>
+       <em class="text-warning" id="message">{!!session('flash_message_error')!!}</em>
       </div>
       @endif
       @if(Session::has('flash_message_success'))
-      <div class="alert alert-success alert-block" id="autoClose" >
+      <div class="alert alert-success alert-block successAlert" id="autoClose" >
         <button type="button" class="close" data-dismiss="alert">×</button>
-        <em class="text-primary">{!!session('flash_message_success')!!}</em>
+        <em class="text-primary" id="message">{!!session('flash_message_success')!!}</em>
       </div>
       @endif
   <div class="card">
@@ -102,6 +103,5 @@
 <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
 <!-- Form Validation -->
 <script src="{{asset('dist/js/form_validation.js')}}"></script>
-
 </body>
 </html>

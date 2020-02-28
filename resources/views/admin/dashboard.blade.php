@@ -17,15 +17,15 @@
           </div><!-- /.col -->
         </div><!-- /.row -->
         @if(Session::has('flash_message_error'))
-          <div class="alert alert-danger alert-block" id="autoClose" >
+          <div class="alert alert-danger alert-block errorAlert" id="autoClose" >
             <button type="button" class="close" data-dismiss="alert">×</button>
-             <em class="text-warning">{!!session('flash_message_error')!!}</em>
+             <em class="text-warning" id="message">{!!session('flash_message_error')!!}</em>
             </div>
             @endif
             @if(Session::has('flash_message_success'))
-            <div class="alert alert-success alert-block" id="autoClose" >
+            <div class="alert alert-success alert-block successAlert" id="autoClose" >
               <button type="button" class="close" data-dismiss="alert">×</button>
-              <em class="text-primary">{!!session('flash_message_success')!!}</em>
+              <em class="text-primary" id="message">{!!session('flash_message_success')!!}</em>
             </div>
             @endif
       </div><!-- /.container-fluid -->

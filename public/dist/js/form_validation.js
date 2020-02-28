@@ -52,6 +52,25 @@ $(document).ready(function () {
             }
         });
     });
+    //success alert mesage
+      $(".successAlert").ready(function () {
+        var $isDeleteSuccessfull = $("div.successAlert");
+        if ($isDeleteSuccessfull.length > 0) {
+            var Message = $isDeleteSuccessfull.find("em#message").text();
+        Swal.fire(
+          'Success!',
+          Message,
+          'success')}
+});
+$(".errorAlert").ready(function () {
+  var $isDeleteSuccessfull = $("div.errorAlert");
+  if ($isDeleteSuccessfull.length > 0) {
+      var Message = $isDeleteSuccessfull.find("em#message").text();
+  Swal.fire(
+    'Error!',
+    Message,
+    'error' )}
+});
     //Automatically close alerts
     window.setTimeout(function () {
         $(".alert").fadeTo(500, 0).slideUp(500, function () {

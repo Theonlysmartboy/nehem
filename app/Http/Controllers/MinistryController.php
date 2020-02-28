@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use Redirect;
+use UxWeb\SweetAlert\SweetAlert;
 use App\Ministry;
 
 class MinistryController extends Controller
@@ -21,6 +23,7 @@ class MinistryController extends Controller
     if (Session::has('adminSession')) {
       if (!empty($id)) {
         Ministry::where(['id' => $id])->delete();
+        SweetAlert::success('Success Message', 'Ministry Deleted Successfully');
         return redirect()->back()->with('flash_message_success', 'Ministry Deleted Successfully');
       }
   }else{

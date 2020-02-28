@@ -99,6 +99,7 @@ class AdminController extends Controller
 
     public function logout(){
       Session::flush();
+      alert()->success('You have been logged out.', 'Good bye!');
       return redirect('/')->with('flash_message_success', 'Be blessed! See you gain later');
     }
 }

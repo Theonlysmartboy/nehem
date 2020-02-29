@@ -23,11 +23,19 @@ class MinistryController extends Controller
     if (Session::has('adminSession')) {
       if (!empty($id)) {
         Ministry::where(['id' => $id])->delete();
-        SweetAlert::success('Success Message', 'Ministry Deleted Successfully');
         return redirect()->back()->with('flash_message_success', 'Ministry Deleted Successfully');
       }
   }else{
     return Redirect::back()->with('flash_message_error', 'Access denied');
+  }
+}
+  public function showEditMinistryForm($id = null){
+  if (Session::has('adminSession')) {
+    if (!empty($id)) {
+      $title = "NEHEM | Ministries";
+      $ministrydetails = Ministry::where(['id' =>$id])->first();
+      return view('ministry.edit')->with(compact('title', 'ministrydetails'));
+    }
   }
 }
 }

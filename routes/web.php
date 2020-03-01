@@ -25,7 +25,6 @@ Route::prefix('user')->group(function(){
   Route::get('/edit/{id}', 'UsersController@showEditUserForm')->name('edit.user');
   Route::post('/edit/{id}', 'UsersController@update')->name('edit.user.submit');
   Route::get('/delete/{id}', 'UsersController@delete')->name('delete.user');
-  Route::post('/delete/{id}', 'UsersController@delete')->name('delete.user.submit');
 });
 //member routes
 Route::prefix('member')->group(function(){
@@ -35,7 +34,6 @@ Route::prefix('member')->group(function(){
   Route::get('/edit/{id}', 'MemberController@showEditMemberForm')->name('edit.member');
   Route::post('/edit/{id}', 'MemberController@update')->name('edit.member.submit');
   Route::get('/delete/{id}', 'MemberController@delete')->name('delete.member');
-  Route::post('/delete/{id}', 'MemberController@delete')->name('delete.member.submit');
 });
 //ministry routes
 Route::prefix('ministry')->group(function(){
@@ -45,7 +43,6 @@ Route::prefix('ministry')->group(function(){
   Route::get('/edit/{id}', 'MinistryController@showEditMinistryForm')->name('edit.ministry');
   Route::post('/edit/{id}', 'MinistryController@update')->name('edit.ministry.submit');
   Route::get('/delete/{id}', 'MinistryController@delete')->name('delete.ministry');
-  Route::post('/delete/{id}', 'MinistryController@delete')->name('delete.ministry.submit');
 });
 //department routes
 Route::prefix('department')->group(function(){
@@ -55,7 +52,6 @@ Route::prefix('department')->group(function(){
   Route::get('/edit/{id}', 'DepartmentController@showEditMemberForm')->name('edit.department');
   Route::post('/edit/{id}', 'DepartmentController@update')->name('edit.department.submit');
   Route::get('/delete/{id}', 'DepartmentController@delete')->name('delete.department');
-  Route::post('/delete/{id}', 'DepartmentController@delete')->name('delete.department.submit');
 });
 
 Route::get('/logout','AdminController@logout')->name('logout');

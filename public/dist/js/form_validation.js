@@ -1,3 +1,4 @@
+//Function to update password
 $(document).ready(function () {
     $("#new_pwd").click(function () {
         var current_pwd = $("#current_pwd").val();

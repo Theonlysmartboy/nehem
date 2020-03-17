@@ -46,6 +46,10 @@
                     <label for="desc">Description</label>
                     <input type="text" class="form-control" id="desc" name="desc" value="{{$departmentDetails->desc}}">
                   </div>
+                  <div class="form-group">
+                    <label for="desc">Status</label>
+                    <input type="text" class="form-control" id="desc" name="desc" value="{{$departmentDetails->desc}}">
+                  </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer text-center">

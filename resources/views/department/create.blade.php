@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Ministry</h1>
+            <h1>Department</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{{route('view.ministry')}}">Ministries</a></li>
+              <li class="breadcrumb-item"><a href="{{route('view.department')}}">Department</a></li>
               <li class="breadcrumb-item active">Edit</li>
             </ol>
           </div>
@@ -32,19 +32,19 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Ministry Details</h3>
+                <h3 class="card-title">Edit Department Details</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{url('ministry/edit/'.$ministryDetails->id)}}" method="post">@csrf
+              <form role="form" action="{{url('department/edit/'.$departmentDetails->id)}}" method="post">@csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" value="{{$ministryDetails->title}}">
+                    <input type="text" class="form-control" id="title" name="title" value="{{$departmentDetails->title}}">
                   </div>
                   <div class="form-group">
                     <label for="desc">Description</label>
-                    <input type="text" class="form-control" id="desc" name="desc" value="{{$ministryDetails->desc}}">
+                    <input type="text" class="form-control" id="desc" name="desc" value="{{$departmentDetails->desc}}">
                   </div>
                 </div>
                 <!-- /.card-body -->

@@ -32,19 +32,19 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Ministry Details</h3>
+                <h3 class="card-title">Create Ministry</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{url('ministry/edit/'.$ministryDetails->id)}}" method="post">@csrf
+              <form role="form" action="{{route('add.ministry.submit')}}" method="post">@csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" value="{{$ministryDetails->title}}">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Title" required>
                   </div>
                   <div class="form-group">
                     <label for="desc">Description</label>
-                    <input type="text" class="form-control" id="desc" name="desc" value="{{$ministryDetails->desc}}">
+                    <input type="text" class="form-control" id="desc" name="desc" placeholder="Description" required>
                   </div>
                 </div>
                 <!-- /.card-body -->

@@ -38,7 +38,7 @@ Route::prefix('member')->group(function(){
 //ministry routes
 Route::prefix('ministry')->group(function(){
   Route::get('/view', 'MinistryController@index')->name('view.ministry');
-  Route::get('/add', 'MinistryController@showAddMemberForm')->name('add.ministry');
+  Route::get('/add', 'MinistryController@showAddMinistryForm')->name('add.ministry');
   Route::post('/add', 'MinistryController@create')->name('add.ministry.submit');
   Route::get('/edit/{id}', 'MinistryController@showEditMinistryForm')->name('edit.ministry');
   Route::post('/edit/{id}', 'MinistryController@update')->name('edit.ministry.submit');
@@ -47,7 +47,7 @@ Route::prefix('ministry')->group(function(){
 //department routes
 Route::prefix('department')->group(function(){
   Route::get('/view', 'DepartmentController@index')->name('view.department');
-  Route::get('/add', 'DepartmentController@showAddMemberForm')->name('add.department');
+  Route::get('/add', 'DepartmentController@showAddDepartmentForm')->name('add.department');
   Route::post('/add', 'DepartmentController@create')->name('add.department.submit');
   Route::get('/edit/{id}', 'DepartmentController@showEditMemberForm')->name('edit.department');
   Route::post('/edit/{id}', 'DepartmentController@update')->name('edit.department.submit');

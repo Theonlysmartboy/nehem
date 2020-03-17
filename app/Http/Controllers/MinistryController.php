@@ -19,6 +19,35 @@ class MinistryController extends Controller
       return redirect()->back()->with('flash_message_error', 'Access denied');
     }
   }
+  public function showAddMinistryForm(){
+    if (Session::has('adminSession')) {
+        $title = "NEHEM | Ministries";
+        return view('ministry.create')->with(compact('title'));
+    }
+    else{
+      return redirect()->back()->with('flash_message_error', 'Access denied');
+    }
+  }
+  public function create(Request $request){
+    if (Session::has('adminSession')) {
+      //get user post data
+      $title = $request['title'];
+      $description = $request['desc'];
+      //save the data
+        // create an instance of ministry
+        $ministry = new Ministry;
+        // pass ministry attributes from the user post data
+        $ministry->title = $title;
+        $ministry->desc = $description;
+        //finish the saving
+        $ministry->save();
+      //return the user to the ministry view page with a success message
+        return redirect('/ministry/view')->with('flash_message_success', 'New ministry created successfully');
+
+    }else{
+      return redirect()->back()->with('flash_message_error', 'Access denied');
+    }
+  }
   public function showEditMinistryForm($id = null){
   if (Session::has('adminSession')) {
     if (!empty($id)) {
